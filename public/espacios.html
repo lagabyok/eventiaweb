@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Espacios</title>
+  </head>
+  <body>
+    <h1>Bienvenido a Espacios</h1>
+    <script>
+      const token = localStorage.getItem("token");
+      console.log("Token obtenido de localStorage:", token);
+
+      if (!token) {
+        alert("No tienes acceso a esta página. Ingrese un token primero.");
+        window.location.href = "/login.html";
+      }
+
+      fetch("/espacios", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            alert("Token inválido. Ingrese un token válido.");
+            window.location.href = "/login.html";
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Hubo un problema con la solicitud. Intente nuevamente.");
+        });
+    </script>
+  </body>
+</html>
