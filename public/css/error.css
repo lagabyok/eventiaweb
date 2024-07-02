@@ -1,0 +1,169 @@
+/* GLOBALES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --principal: #b222bf;
+    --separador: #f2f2f2;
+  }
+  
+  html {
+    font-size: 62.5%; /* 1 Rem = 10px */
+  }
+  
+  body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  /* CONTENEDOR */
+  
+  .contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+  
+  /* NAVBAR */
+  
+  nav .navbar-brand {
+    font-size: 2.5rem;
+  }
+  
+  nav .nav-link {
+    font-size: 2rem;
+  }
+  
+  .logo-navbar {
+    width: 120px;
+    height: 40px;
+  }
+
+  
+  /* FOOTER */
+  
+  footer {
+    height: 220px;
+    background-color: #262929;
+    width: 100%;
+    margin-top: 5rem;
+    margin-bottom: -200px;
+  }
+  
+  .texto-footer {
+    padding-top: 3rem;
+    background-color: #262929;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 780px) {
+    .texto-footer {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+  
+  @media screen and (max-width: 390px) {
+    .texto-footer {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
+  }
+  
+  footer p {
+    text-align: center;
+    color: white;
+    margin: 0;
+    font-size: 1.3rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .direccion-footer h3 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--principal);
+    margin-bottom: 1rem;
+  }
+  
+  .direccion-footer {
+    display: block;
+  }
+  
+  .eventos-footer h3 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--principal);
+    margin-bottom: 1rem;
+  }
+  
+  .eventos-footer {
+    display: block;
+  }
+  
+  .paginas-footer h3 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--principal);
+    margin-bottom: 1rem;
+  }
+  
+  .links-footer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .paginas-footer a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3rem;
+  }
+  
+  .seguinos-footer h3 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--principal);
+    margin-bottom: 1rem;
+  }
+  
+  .iconos-footer {
+    font-size: 1.8rem;
+  }
+  
+  .iconos-footer a {
+    color: #fff;
+    padding-right: 0.5rem;
+  }
+  
+  .copyright {
+    background-color: #262929;
+  }
+  
+  .texto-copy {
+    padding-top: 2rem;
+  }
+  
+  .copyright p {
+    color: #fff;
+    font-size: 1.1rem;
+  }
+  

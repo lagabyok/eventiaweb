@@ -1,0 +1,610 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; 
+}
+
+body{
+  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+          "nav nav nav"
+          "header header header "
+          "footer footer footer ";
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    background-color: #fff;
+    color: var(--texto);
+    gap: 2rem;
+  }
+  
+  nav{
+    grid-area: nav;
+  }
+
+header {
+    grid-area: header;
+}
+
+footer {
+    grid-area: footer;
+}
+
+:root {--principal:#b222bf ; /* Color principal (rosa) */
+  --separador: #f2f2f2; /* Color separador (blanco marfil) */
+  --navbar-footer: #262929; /* Color navbar-footer */
+  --background-color: #d8c1dfad; /* Color de fondo */
+  --texto: #fff; /* Color de texto */
+  --form: #f3d6ee; /* Color principal (rosa) */
+}
+
+
+nav .navbar-brand {
+    font-size: 2.5rem;
+}
+
+nav .nav-link {
+    font-size: 2rem;
+}
+
+.logo-navbar {
+  width: 120px;
+  height: 40px;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #262929;
+  font-size: 0.9em;
+}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+  color: #262929;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #262929;
+  font-size: 0.9em;
+}
+
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
+  color: #262929;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #262929;
+  font-size: 0.9em;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+  color: #262929;
+  
+}
+
+input::-ms-placeholder, textarea::-ms-placeholder {
+  color: #262929;
+font-size: 0.9em;
+} 
+
+input:focus::-ms-placeholder, textarea:focus::-ms-placeholder {
+  color: #262929;
+
+}
+
+
+input:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder {
+  color: #262929;
+font-size: 0.9em;
+}
+
+input:hover:focus::-webkit-input-placeholder, textarea:hover:focus::-webkit-input-placeholder {
+  color: #262929;
+  
+}
+
+input:hover::-moz-placeholder, textarea:hover::-moz-placeholder {
+  color: #262929;
+  font-size: 0.9em;
+}
+
+input:hover:focus::-moz-placeholder, textarea:hover:focus::-moz-placeholder {
+  color: #262929;
+
+}
+
+input:hover::placeholder, textarea:hover::placeholder {
+  color: #262929;
+font-size: 0.9em;
+}
+
+input:hover:focus::placeholder, textarea:hover:focus::placeholder {
+  color: #262929;
+
+}
+
+input:hover::placeholder, textarea:hover::placeholder {
+  color: #262929;
+font-size: 0.9em;
+}
+
+input:hover:focus::-ms-placeholder, textarea:hover:focus:-ms-placeholder {
+  color: #262929;
+
+}
+
+
+header {
+  position: relative;
+  height: 70rem;
+  margin-top: 4rem;
+ 
+}
+
+.contactanos{
+  margin: 100px 0 25px 0;
+  font-size: 3.5em;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 900;
+  color:  #262929;
+}
+#form {
+  position: relative;
+  width: 600px;
+  margin: 20px auto 100px auto;
+  text-align: center;
+ 
+}
+
+input {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.50em;
+  width: 600px;
+  height: 70px;
+  padding: 0px 15px 0px 15px;
+  background-color:  var(--form);
+  outline: none;
+  color: var(--navbar-footer);
+  border: solid 4px var(--navbar-footer);
+  border-bottom: none;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+
+input:hover {
+  background-color: var(--separador);
+  color: var(--navbar-footer); ;
+}
+
+#submitButton:hover {
+  background-color: #262929;
+  color: #b222bf;
+}
+
+textarea {
+  width: 600px;
+  max-width: 600px;
+  height: 170px;
+  max-height: 250px;
+  padding: 15px;
+  color: var(--principal);
+  border: solid 4px var(--navbar-footer);
+  background-color:  var(--form);
+  outline: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6em;  
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+
+textarea:hover {
+  background-color: var(--separador);
+  color: var(--navbar-footer); ;
+}
+
+#submit {
+  width: 600px;
+  padding: 0;
+  margin: -5px 0px 0px 0px;
+  font-family: 'Lato', sans-serif ;
+  font-weight: 800;
+  font-size: 2em;
+  outline:none;
+  cursor: pointer;
+  border: solid 4px #262929;
+  border-top: none;
+  background:linear-gradient(136deg, var(--principal), rgb(224, 187, 223) , var(--principal), rgb(170, 114, 243) , var(--principal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient 8s ease-in-out infinite;
+}
+.btnenv{
+  background-color: var(--navbar-footer) ;
+  margin: -5px 0px 10px 0px;
+  border-bottom: 4px solid #262929;
+}
+
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%;; }
+}
+
+#submit:hover {
+  background-color: var(--separador);
+  color: var(--navbar-footer); ;
+}
+
+label:hover{
+  color: #262929;
+}
+
+/* FOOTER */
+
+footer {
+  width: 100%;
+  height: 220px;
+  background-color: #262929;
+  margin-top: 5rem;
+}
+
+.texto-footer {
+  padding-top: 3rem;
+  background-color: #262929;
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  text-align: center;
+}
+
+footer p {
+  text-align: center;
+  color: white;
+  margin: 0;
+  font-size: 1.3rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.direccion-footer h3 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--principal);
+  margin-bottom: 1rem;
+}
+
+.direccion-footer {
+  display: block;
+  height: 230px;
+  position: relative;
+}
+
+#miiframe {
+  width: 80%; 
+  height: 70%; 
+  border: none; 
+  position: absolute; 
+  bottom: 0;
+  left: 10%;
+
+}
+
+.eventos-footer h3 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--principal);
+  margin-bottom: 1rem;
+}
+
+.eventos-footer {
+  display: block;
+}
+
+
+.paginas-footer h3 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--principal);
+  margin-bottom: 1rem;
+}
+
+
+.links-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.paginas-footer a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.3rem;
+}
+
+.seguinos-footer h3 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--principal);
+  margin-bottom: 1rem;
+}
+
+.iconos-footer {
+  font-size: 1.8rem;
+}
+
+.iconos-footer a {
+  color: #fff;
+  padding-right: 0.5rem;
+}
+
+.copyright {
+  background-color: #262929;
+}
+
+.texto-copy {
+  padding-top: 2rem;
+}
+
+.copyright p {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+
+/*media querys*/
+
+
+@media only screen and (min-width:300px)and (max-width: 450px){
+  
+    header{
+     height: 70rem;
+   
+   }
+   .contactanos{
+    width: 90%;
+   }
+  
+   .cform{
+   position: relative;
+   width: 350px;
+   margin: 20px auto 100px auto;
+   text-align: center;
+   }
+  
+   #form{
+     width:110%;
+   }
+ 
+  .cform-input
+  .cform textarea,
+  .btnenv{
+ width: 100%; 
+ max-width: 100%;
+ box-sizing: border-box; 
+ margin-bottom: 1px; 
+ margin-left: -10%;
+ }
+ .cform-input{
+ width: 98%;
+ }
+ .cform textarea{
+   width:98%;
+ 
+ }
+ .btnenv{
+ width:53%;
+ margin-left:90px;
+ }
+ #submit{
+   width: 100%;
+ }
+   footer{
+     width:100%;
+   }
+  
+   .texto-footer{
+     width: 99%;
+     display: contents;
+     gap: 0px;
+     justify-content: center; 
+     align-items: center; 
+   }
+ 
+    .eventos-footer{
+     background-color: #262929;
+     display: block;
+     margin: 0;
+     gap: 0px;
+     margin-top:-10px;
+ 
+   }
+    .paginas-footer{
+     background-color: #262929;
+     gap: 0px;
+     margin-top:0px;
+   }
+    .seguinos-footer{
+     background-color: #262929;
+     margin-top:-4px;
+   }
+   #miiframe{
+     width: 75%;
+     height: 50%;
+     top: 35%;
+     margin:20px;
+   }
+   }
+
+
+   @media only screen and (min-width:451px)and (max-width: 800px)
+   {
+     header, footer{
+      width: 100%; 
+    }
+    .contactanos{
+     width: 90%;
+    }
+    
+    .cform{
+      width: 99%;
+      max-width: none;
+      margin: 0;
+      padding: 10px; 
+      box-sizing: border-box; 
+      justify-content: left;
+      position: relative;
+    }
+     #form{
+       width:90%;
+     }
+    .containerform{
+      width: 500px;
+      position:relative;
+      height: 50rem;
+      padding:40px;
+    }
+
+   .cform-input
+   .cform textarea {
+  width: 100%; 
+  max-width: 100%;
+  box-sizing: border-box; 
+  margin-bottom: 1px; 
+}
+.cform-input{
+  margin-left:-60px;
+  padding:30px;
+}
+.cform textarea{
+  margin-left:-60px;
+}
+.btnenv{
+  width:91%;
+}
+
+#submit{
+  width: 100%;
+}
+
+
+footer p {
+  text-align: center;
+  color: white;
+  margin: 0;
+  font-size: 1.3rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.direccion-footer h3 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--principal);
+  margin-bottom: 1rem;
+}
+
+.direccion-footer {
+  display: block;
+}
+
+.eventos-footer h3 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--principal);
+  margin-bottom: 1rem;
+}
+
+.eventos-footer {
+  display: block;
+}
+
+
+.paginas-footer h3 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--principal);
+  margin-bottom: 1rem;
+}
+
+
+.links-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.paginas-footer a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.3rem;
+}
+
+.seguinos-footer h3 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--principal);
+  margin-bottom: 1rem;
+}
+
+.iconos-footer {
+  font-size: 1.8rem;
+}
+
+.iconos-footer a {
+  color: #fff;
+  padding-right: 0.5rem;
+}
+
+.copyright {
+  background-color: #262929;
+}
+
+.texto-copy {
+  padding-top: 2rem;
+}
+
+.copyright p {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+
+  }
+     
+
+
+ 
+
+
+
+
+
+
