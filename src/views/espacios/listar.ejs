@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Lato:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/error.css" />
+    <title><%= tituloDePagina %></title>
+    <style>
+      table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        font-size: 1.5rem; /* Aumenta el tamaño de la letra */
+      }
+      thead {
+        background-color: #343a40;
+        color: white;
+      }
+      th,
+      td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+      tbody tr:hover {
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.1
+        ); /* Oscurece la fila al pasar el cursor */
+      }
+      .btn-create {
+        margin-bottom: 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        font-size: 1.5rem;
+      }
+      .btn-create:hover {
+        background-color: #0056b3;
+      }
+      .btn-edit {
+        margin-right: 10px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        font-size: 1.5rem;
+      }
+      .btn-edit:hover {
+        background-color: #218838;
+      }
+      .btn-delete {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        font-size: 1.5rem;
+      }
+      .btn-delete:hover {
+        background-color: #c82333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-expand-lg bg-body-tertiary fixed-top"
+      data-bs-theme="dark"
+    >
+      <div class="container-fluid">
+        <img src="img/logo2.png" class="logo-navbar" alt="logo eventia" />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+            <a class="nav-link" href="/nosotros">Nosotros</a>
+            <a class="nav-link" href="/eventos">Eventos</a>
+            <a class="nav-link" href="/contacto">Contacto</a>
+            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link active" href="/espacios">Espacios</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="contenedor">
+      <h1 style="text-align: center"><%= tituloDePagina %></h1>
+      <br />
+      <a href="/espacios/crear" class="btn btn-create">Crear Nuevo Espacio</a>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Capacidad</th>
+            <th>Evento</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% espacios.forEach(espacio => { %>
+          <tr>
+            <td><%= espacio.id %></td>
+            <td><%= espacio.nombre %></td>
+            <td><%= espacio.direccion %></td>
+            <td><%= espacio.capacidad %> personas</td>
+            <td><%= espacio.evento %></td>
+            <td class="action-buttons">
+              <a href="/espacios/editar/<%= espacio.id %>" class="btn btn-edit"
+                >Editar</a
+              >
+              <form
+                action="/espacios/<%= espacio.id %>?_method=DELETE"
+                method="post"
+                style="display: inline"
+              >
+                <button type="submit" class="btn btn-delete">Eliminar</button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      async function cargarEspacios() {
+        const token = localStorage.getItem("token");
+
+        if (!token) {
+          alert("No está autenticado. Por favor, inicie sesión.");
+          window.location.href = "/login";
+          return;
+        }
+      }
+
+      cargarEspacios();
+    </script>
+    <footer>
+      <div class="texto-footer">
+        <div class="direccion-footer">
+          <h3>DIRECCIÓN</h3>
+          <p>Av. 9 de Julio y Av. Corrientes</p>
+        </div>
+        <div class="eventos-footer">
+          <h3>EVENTOS</h3>
+          <p>Cumpleaños</p>
+          <p>Recitales</p>
+          <p>Bodas</p>
+          <p>Eventos Corporativos</p>
+        </div>
+        <div class="paginas-footer">
+          <h3>PÁGINAS</h3>
+          <div class="links-footer">
+            <a href="/">Inicio</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/eventos">Eventos</a>
+            <a href="/contacto">Contacto</a>
+            <a href="/espacios">Espacios</a>
+          </div>
+        </div>
+        <div class="seguinos-footer">
+          <h3>SEGUINOS</h3>
+          <div class="iconos-footer">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="texto-copy">
+          <p>
+            Copyright 2024 Eventia Eventos | Todos los Derechos Reservados | All
+            Rights Reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
